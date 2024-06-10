@@ -1,4 +1,7 @@
 # Getting Started with Create React App
+- React project for devdays presentation showcasing use of FHIR.ts library.
+- Main file to consider is : 
+    - `App.js`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
