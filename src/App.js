@@ -51,7 +51,6 @@ function App() {
       .getPatchParameters()
       setParameters(() => ({resource:  replaceParameters}));
     } else {
-      // path: string, value: any, valueDataType: PATCH_DATATYPE, index: number
       const insertParameters = patchUtils
       .createInsertParameters(
         formData.path,
@@ -71,7 +70,7 @@ function App() {
     } else if(valueDataType === 'address') {
       return PATCH_DATATYPE.ADDRESS;
     }
-    return PATCH_DATATYPE.STRING;
+    return PATCH_DATATYPE.HUMAN_NAME;
   }
 
   return (
@@ -151,9 +150,9 @@ function App() {
               <label htmlFor="value" className="form-label">
                 Value
               </label>
-              <input
+              <textarea
                 name="value"
-                type="json"
+                type="text"
                 className="form-control"
                 value={formData.value}
                 onChange={handleChange}
@@ -168,7 +167,7 @@ function App() {
               >
                 <option value="identifier">Identifier</option>
                 <option value="address">Address</option>
-                <option value="string">String</option>
+                <option value="humanName">Human Name</option>
               </select>
             </div> </div>: null}
 
