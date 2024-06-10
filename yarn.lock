@@ -1752,10 +1752,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@smile-cdr/fhirts@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@smile-cdr/fhirts/-/fhirts-2.2.2.tgz#5dbe3ddc3ebd3c5959d86d0866b98fc5487fdd86"
-  integrity sha512-Ku1rXlN3oH4uWeIwu904vjiftlJaelVT/7R1u0mdYlliiGb02c9EQM7rOevLIdbMLfDwHu6vzBpSYpsht/ioNQ==
+"@smile-cdr/fhirts@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@smile-cdr/fhirts/-/fhirts-2.2.3.tgz#8610486e8bfeabe48400c072502b7a8a7f0d0ce4"
+  integrity sha512-jBIFe9/IqvMlycrIzMoV9PFeTunbrN6ZjGV8BFFDL0rKFKrn3ExRLil5IXeuA8MelduWazJM8e1NEQdeQqBBtw==
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
