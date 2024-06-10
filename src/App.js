@@ -17,6 +17,10 @@ function App() {
     resource: {},
   });
 
+  const [multipleParameters, setMultipleParameters] = useState({
+    resource: {},
+  });
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -62,7 +66,33 @@ function App() {
     }
   }
 
+  function createSampleMultiplePatch() {
+    const params = [
+      {
+        value: {
+          use: "work",
+        },
+        valueDataType: PATCH_DATATYPE.ADDRESS,
+        backBoneElementProperty: "address",
+      },
+      {
+        value: {
+          use: "official",
+        },
+        valueDataType: PATCH_DATATYPE.HUMAN_NAME,
+        backBoneElementProperty: "name",
+      },
+    ];
+    const patchUtils = new PatchUtils();
+    const multiplePatchParameters = patchUtils
+      .createMoveParameters("Patient.identifier", 0, 1)
+      .createAddParametersForBackboneElement("Patient", "contact", params)
+      .getPatchParameters();
+    setParameters(() => ({ resource: multiplePatchParameters }));
+  }
+
   function getCorrespodingPatchDatatypeEnum(valueDataType) {
+    createSampleMultiplePatch();
     if (valueDataType === "identifier") {
       return PATCH_DATATYPE.IDENTIFIER;
     } else if (valueDataType === "address") {
@@ -196,6 +226,21 @@ function App() {
         </div>
       </div>
       <br />
+
+      { // uncomment for displaying JSON
+      /* <div className="container">
+        <div className="row col-3">
+          <button
+            onClick={createSampleMultiplePatch}
+            className="btn btn-primary"
+          >
+            Create Multiple Parameters
+          </button>
+        </div>
+      </div> */}
+
+      <br />
+
       <div className="container">
         <div className="row">
           <div class="card">
